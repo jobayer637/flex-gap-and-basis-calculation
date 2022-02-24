@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        body {
+            background-color: rgb(58, 58, 87);
+        }
+
+        .univers__custom_flex-box {
+            width: 80%;
+            margin: auto;
+        }
+
+        .univers__custom_flex-box .wrapper {
+            max-height: 350px;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+
+        .univers__custom_flex-box .wrapper .item {
+            text-align: center;
+            width: 22%;
+            padding: 0% 1.5% 1% 1.5%;
+        }
+
+
+        .univers__custom_flex-box .wrapper .slick-slide {
+            padding: 0% 10px !important;
+        }
+
+        .univers__custom_flex-box .wrapper .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 7px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .univers__custom_flex-box .wrapper .item img {
+                height: 160px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .univers__custom_flex-box .wrapper .item img {
+                height: 130px;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .univers__custom_flex-box {
+                overflow: hidden;
+                width: 70%;
+            }
+
+            .slick-slide{
+                flex-direction: column;
+            }
+
+            .univers__custom_flex-box .wrapper {
+                flex-wrap: inherit;
+                overflow-x: auto;
+            }
+
+            .univers__custom_flex-box .wrapper::-webkit-scrollbar {
+                display: none;
+            }
+
+            .univers__custom_flex-box .wrapper .item {
+                text-align: center;
+                padding: 0% 10px;
+                width: 100%;
+            }
+
+            .univers__custom_flex-box .wrapper .item img {
+                width: 43vw;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .univers__custom_flex-box .wrapper .slick-slide img {
+                width: 100% !important;
+                height: 150px !important;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="univers__custom_flex-box">
+        <div class="wrapper univers_custom_slider">
+            <div class="item">
+                <img src="images/gallery/gal-1.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-2.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-3.jpg" alt="">
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-4.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-5.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-6.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-7.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-8.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-9.jpg" alt="">
+
+            </div>
+
+            <div class="item">
+                <img src="images/gallery/gal-10.jpg" alt="">
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="migrate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.univers_custom_slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            centerMode: false,
+            autoplaySpeed: 2000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        arrows: true,
+                        centerPadding: '0px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        centerPadding: '0px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: true,
+                        centerPadding: '0px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Gap calculation</title>
+    <style>
+        :root {
+            --columns: 4;
+            --g: var(--columns) - 1;
+            --basis: calc(100% / var(--columns) - 1%);
+            --gap: calc((100% - (var(--columns)*var(--basis))) / (var(--g)));
+            --section-width: 80%;
+        }
+
+
+
+        @media (min-width: 1441px) {
+            :root {
+                --columns: 4;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            :root {
+                --columns: 4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --columns: 2;
+                --section-width: 100%;
+            }
+        }
+
+        @media (max-width: 320px) {
+            :root {
+                --columns: 1;
+                --section-width: 90%;
+            }
+        }
+
+        section {
+            width: var(--section-width);
+            margin: auto;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap);
+            box-sizing: border-box;
+        }
+
+        .item {
+            flex-basis: var(--basis);
+            border: 1px solid;
+            aspect-ratio: 1.5;
+            margin-bottom: 2vh;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="wrapper">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer {
+            width: 90%;
+            margin: auto;
+            margin-top: 20px;
+            border: 1px solid red;
+            background-color: sandybrown;
+            overflow: hidden;
+            padding: 10px;
+            position: relative;
+        }
+
+        .inner {
+            display: flex;
+            gap: 10px;
+            transform: translateX(-3 50px);
+            transition: 1s;
+        }
+
+        .item {
+            background-color: seagreen;
+            width: 25%;
+            padding: 10px;
+        }
+
+
+        /* .item span{
+            width: 223px;
+            display: block;
+        } */
+
+        .prev {
+            position: absolute;
+            left: 0;
+            height: 50px;
+            width: 50px;
+            border: 1px solid blue;
+            border-radius: 50%;
+            top: 40%;
+            z-index: 99;
+        }
+
+        .next {
+            position: absolute;
+            right: 0;
+            height: 50px;
+            width: 50px;
+            border: 1px solid blue;
+            border-radius: 50%;
+            top: 40%;
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <button class="prev"> < </button>
+                <button class="next"> > </button>
+                <div class="inner">
+                    <div class="item">
+                        <span class="item_span"></span>
+                        1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        6 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        7 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        8 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        9 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                    <div class="item">
+                        <span class="item_span"></span>
+                        10 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est vero eius dicta animi eos hic asperiores, accusantium, nemo a amet exercitationem ducimus beatae expedita recusandae commodi, non voluptas cum enim.</div>
+                </div>
+    </div>
+
+    <script src="jquery.js"></script>
+
+    <script>
+        let inner = $(".inner")
+        let item = inner.children()[0].offsetWidth
+        let l = inner.children()[0].offsetLeft
+
+        let iw = inner.width() / 15.4 
+
+        console.log(iw)
+
+        $(".item span").each((index, item)=>{
+            $(item).css({
+                padding: `${iw}px`
+            })
+        })
+        
+        let slide = iw * 2
+        $(".prev").on("click", () => {
+            slideFunc(slide)
+        })
+
+        $(".next").on("click", () => {
+            slideFunc(-slide)
+        })
+
+        let dec = 0
+        const slideFunc = (s) => {
+            dec = dec + (s*4)
+            inner.css({
+                "transform": `translateX(${dec}px)`
+            }) 
+        }
+
+    </script>
+</body>
+
+</html>
